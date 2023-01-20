@@ -1,0 +1,87 @@
+#nav{
+    position:fixed;
+    top:0px;
+    width: 100%;
+    
+}
+#nav1 {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+    background-color: rgb(242, 246, 249);
+   
+    margin-top: 0px;
+    padding-top: 0px;
+    
+}
+
+#nav1 img {
+    width: 100%;
+
+}
+#navgap{
+    height: 160px
+}
+
+
+#nav1 .right {
+    width: 30%;
+
+}
+
+#nav1 p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#nav2 {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+  
+    background-color: rgb(235, 240, 244);
+    
+}
+
+#nav2 img {
+    width: 20%;
+}
+
+#nav2>div {
+  
+    padding: 10px;
+}
+
+#nav2 #search {
+    width: 650px;
+    height: 40px;
+
+}
+
+form {
+    display: flex;
+}
+
+#location {
+    display: flex;
+   
+    justify-content: space-between;
+
+}
+
+#nav2 p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#car {
+    display: flex;
+    align-items: center;
+
+}
+
+#mid1{
+display: flex;
+}
