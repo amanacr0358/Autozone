@@ -13,9 +13,23 @@ gap:10px
     background-color: rgb(249, 247, 245);
     padding: 2px;
     margin: 0%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     
 }
-
+#price button{
+    width:300px;
+    height: 50px;
+    background-color: coral;
+    border: 0ch;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 25px
+}
+#price button:hover{
+    background-color:rgb(121, 68, 31) 
+}
 #cartproduct>div{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     padding: 15px; 
