@@ -1,0 +1,32 @@
+ #signindiv{
+    display: flex;
+     width:100%;
+     
+
+}
+#signindiv>div:nth-child(1){
+    width:40%;
+    padding: 20px;
+}
+#signindiv>div:nth-child(2){
+    width:60%
+}
+#signindiv >div:nth-child(2) img{
+    width:100%
+}
+.inp{
+    width:400px;
+    height: 40px;
+    margin: 20px 0px;
+}
+#sub{
+    background-color: black;
+    color:white;
+    font-size: 100%;
+}
+#sub:hover{
+    background-color: rgb(50, 49, 49);
+}
+span{
+    border-bottom: 2px solid black;
+}

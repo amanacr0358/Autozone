@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <style>
+        #createmain{
+            display: flex;
+            width:100%;
+        }
+        #createmain>div:nth-child(1){
+            width:40%;
+            padding: 20px;
+        }
+        #createmain>div:nth-child(2){
+            width:60%
+        }
+        #createmain >div:nth-child(2) img{
+            width:100%
+        }
+        .inp{
+            width:400px;
+            height: 40px;
+            margin: 2px 0px;
+        }
+        #sub{
+            background-color: black;
+            color:white;
+            font-size: 100%;
+        }
+        #sub:hover{
+            background-color: rgb(50, 49, 49);
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="createmain">
+    <div>
+        <img src="https://www.autozone.com/images/az-logo-full.svg" alt="">
+        <h2>BECOME AN AUTOZONE REWARDS MEMBER</h2>
+    <form id="signup">
+        <input class="inp"  type="text" required placeholder="First Name"
+        id="sFName">
+        <br>
+        <input class="inp" type="text" required placeholder="Last Name"
+        id="sLName">
+        <br>
+        <input class="inp"  type="number" required placeholder="Zip Code"
+        id="sCode">
+        <br>
+        <input class="inp"  type="number" required placeholder="Phone Number"
+        id="phon">
+        <br>
+        <input class="inp"  type="email" required placeholder="Email"
+        id="sEmail">
+        <br>
+        <input class="inp"  type="password" required placeholder="Password"
+        id="sPassword">
+        <br>
+        <input class="inp"  type="password" required 
+        placeholder="Re-enter the password"
+        id="sPassword1">
+        <br>
+        <input id="sub" class="inp"  type="submit" value="JOIN">
+    </form>
+</div>
+<div>
+    <img src="./images/mid8.png" alt="">
+</div>
+</div>
+</body>
+<script>
+    let signUpForm = document.querySelector('#signup')
+    let userDB = JSON.parse(localStorage.getItem('users'))||[];
+
+    signUpForm.addEventListener('submit',function(event){
+       
+        event.preventDefault();
+     
+        let formData = {
+            Fname: signUpForm.sFName.value,
+            Lname: signUpForm.sLName.value,
+            zipcode: signUpForm.sCode.value,
+            phone: signUpForm.phon.value,
+            email: signUpForm.sEmail.value,
+            password: signUpForm.sPassword.value
+        }
+       
+        if(signUpForm.sPassword.value!=signUpForm.sPassword1.value){
+            alert('passwords mismatch!')
+        }
+        else{
+            let count = 0;
+            userDB.forEach(function(el){
+                if(el.email == formData.email){
+                    count++;
+                }
+            })
+            if(count>0){
+                alert('user already registered!')
+            }
+            else{
+               
+                userDB.push(formData);
+                
+                localStorage.setItem('users',JSON.stringify(userDB));
+                alert('registered successfully!')
+            }
+        }
+    })
+</script>
+</html>

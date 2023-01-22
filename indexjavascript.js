@@ -110,5 +110,12 @@ console.log(signinpage)
 
 signinpage.addEventListener("click" ,function(){
   window.location.assign('./signin.html');
-  console.log(1)
+ 
+})
+
+let createA = document.querySelector("#crA");
+
+console.log(createA)
+createA.addEventListener("click",function(){
+  window.location.assign('./createAccount.html');
 })
