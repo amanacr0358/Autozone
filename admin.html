@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin</title>
+    <style>
+        form {
+            width: 300px;
+            margin: auto;
+            margin-top: 150px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        form * {
+            margin: 5px 0px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome Admin!</h1>
+    <form>
+        <input type="text" placeholder="Name" required id="name">
+        <br>
+        <input type="text" placeholder="Ratting" required id="desc">
+        <br>
+
+        <input type="number" placeholder="price" required id="price">
+        <br>
+        <input type="url" required placeholder="url of the image" id="url">
+        <br>
+        <input type="submit">
+    </form>
+</body>
+
+</html>
+
+<script>
+
+    let form = document.querySelector('form');
+
+
+
+    let productDB = JSON.parse(localStorage.getItem('productDB')) || [];
+
+
+    form.addEventListener('submit', function (event) {
+
+        event.preventDefault();
+
+        let formData = {
+            name: form.name.value,
+            desc: form.desc.value,
+            price: form.price.value,
+            url: form.url.value,
+
+        }
+
+        productDB.push(formData);
+
+        localStorage.setItem('productDB', JSON.stringify(productDB));
+
+        alert('product added to DB!');
+    })
+</script>
